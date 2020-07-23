@@ -1,0 +1,9 @@
+<abc>def</abc>
+<deep>
+  <nested>
+    <thing>123</thing>
+  </nested>
+</deep>
+<array>1</array>
+<array>4</array>
+<array>9</array>

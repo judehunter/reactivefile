@@ -19,6 +19,9 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "fast-xml-parser": "^3.17.4",
+    "js-yaml": "^3.14.0",
     "rxjs": "^6.6.0"
   }
 }

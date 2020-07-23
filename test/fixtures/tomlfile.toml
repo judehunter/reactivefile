@@ -1,0 +1,7 @@
+abc = "def"
+
+array = [1, 4, 9]
+
+[deep]
+  [deep.nested]
+    thing = 123
