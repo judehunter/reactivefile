@@ -7,7 +7,12 @@
     "target": "es2017",
     "sourceMap": true,
     "outDir": "./dist",
-    "incremental": true
+    "incremental": true,
+    "declaration": true
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
 }
