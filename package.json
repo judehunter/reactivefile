@@ -1,7 +1,8 @@
 {
   "name": "reactivefile",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": ["dist/**/*"],
   "scripts": {
     "dev": "ts-node src/index",
     "build": "tsc",
