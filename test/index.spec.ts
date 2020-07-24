@@ -23,9 +23,9 @@ test('JSON ReactiveFile', async () => {
   const from = __dirname + '/fixtures/jsonfile.json';
   const to = __dirname + '/temp/jsonfile.json';
   const data = await rf.load(from, {saveTo: to, asyncSave: false});
-  data.val.abc = 'ghi';
-  data.val.deep.nested.thing = 456;
-
+  data.$.abc = 'ghi';
+  data.$.deep.nested.thing = 456;
+  
   expect(JSON.parse((await fs.promises.readFile(to)).toString())).toEqual(testObject);
 })
 
@@ -60,6 +60,18 @@ test('XML ReactiveFile', async () => {
 })
 
 test('non-deep reactiveness', async () => {
+  const from = __dirname + '/fixtures/jsonfile.json';
+  const to = __dirname + '/temp/jsonfile.json';
+  const data = await rf.load(from, {saveTo: to, deep: false, asyncSave: false});
+  data.val.abc = 'ghi';
+  data.val.deep.nested.thing = 456;
+
+  expect(JSON.parse((await fs.promises.readFile(to)).toString())).toEqual(
+    JSON.parse('{"abc": "ghi", "deep": {"nested": {"thing": 123}}, "array": [1, 4, 9]}')
+  );
+})
+
+test('add key and .react()', async () => {
   const from = __dirname + '/fixtures/jsonfile.json';
   const to = __dirname + '/temp/jsonfile.json';
   const data = await rf.load(from, {saveTo: to, deep: false, asyncSave: false});
