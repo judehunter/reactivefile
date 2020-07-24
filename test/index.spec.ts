@@ -59,7 +59,7 @@ test('XML ReactiveFile', async () => {
   expect(xml.parse((await fs.promises.readFile(to)).toString())).toEqual(testObject);
 })
 
-test('non-deep reactiveness', async () => {
+test('non-deep reactivity', async () => {
   const from = __dirname + '/fixtures/jsonfile.json';
   const to = __dirname + '/temp/jsonfile.json';
   const data = await ReactiveFile.load(from, {saveTo: to, deep: false, asyncSave: false});
@@ -124,6 +124,6 @@ test('$ alias', async () => {
 })
 
 // comment this out for debugging purposes
-afterAll(async () => {
+afterEach(async () => {
   fs.rmdirSync(__dirname + '/temp', {recursive: true});
 });

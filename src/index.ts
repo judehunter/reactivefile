@@ -117,24 +117,30 @@ class ReactiveFile {
     notify();
   }
 
+  /**
+   * Saves the data into the file asynchronously
+   */
+  async save() {
+    const serialized = ReactiveFile.serialize(this.val, this.opts.type);
+    await fs.promises.mkdir(parsePath(this.path).dir, {recursive: true});
+    fs.writeFileSync(this.path, serialized, {encoding: this.opts.encoding})
+  }
+
+  /**
+   * Saves the data into the file synchronously
+   */
+  saveSync() {
+    const serialized = ReactiveFile.serialize(this.val, this.opts.type);
+    fs.mkdirSync(parsePath(this.path).dir, {recursive: true});
+    fs.writeFileSync(this.path, serialized, {encoding: this.opts.encoding})
+  }
+
   private static parse(str: string, type: string): Obj {
     return this.types[type][0](str);
   }
 
   private static serialize(obj: Obj, type: string): string {
     return this.types[type][1](obj);
-  }
-
-  private async save() {
-    const serialized = ReactiveFile.serialize(this.val, this.opts.type);
-    await fs.promises.mkdir(parsePath(this.path).dir, {recursive: true});
-    fs.writeFileSync(this.path, serialized, {encoding: this.opts.encoding})
-  }
-
-  private saveSync() {
-    const serialized = ReactiveFile.serialize(this.val, this.opts.type);
-    fs.mkdirSync(parsePath(this.path).dir, {recursive: true});
-    fs.writeFileSync(this.path, serialized, {encoding: this.opts.encoding})
   }
 }
 
