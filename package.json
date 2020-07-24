@@ -2,7 +2,9 @@
   "name": "reactivefile",
   "version": "1.0.0",
   "main": "dist/index.js",
-  "files": ["dist/**/*"],
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "dev": "ts-node src/index",
     "build": "tsc",
@@ -22,7 +24,6 @@
   "dependencies": {
     "@iarna/toml": "^2.2.5",
     "fast-xml-parser": "^3.17.4",
-    "js-yaml": "^3.14.0",
-    "rxjs": "^6.6.0"
+    "js-yaml": "^3.14.0"
   }
 }
