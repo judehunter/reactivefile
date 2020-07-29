@@ -28,7 +28,7 @@ A simple example of a `JSON` file with a counter:
 ```
 You can create a reactive binding with a few lines of code:
 ```ts
-import ReactiveFile from 'reactivefile'
+import * as ReactiveFile from 'reactivefile'
 
 const data = await ReactiveFile.load('data.json')
 data.$.counter++
@@ -48,7 +48,9 @@ npm install reactivefile
 ## Usage
 ### Import the package
 ```ts
-import ReactiveFile from 'reactivefile'
+import * as ReactiveFile from 'reactivefile'
+// or
+const ReactiveFile = require('reactivefile')
 ```
 ### Create a reactive binding
 ```ts

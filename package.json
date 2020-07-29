@@ -5,7 +5,7 @@
     "data-structures", "typescript-definitions"],
   "repository": "https://github.com/judehunter/reactivefile",
   "bugs": "https://github.com/judehunter/reactivefile/issues",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "author": "Mateusz Sowiński-Smętny <judehunter>",
   "license": "MIT",
