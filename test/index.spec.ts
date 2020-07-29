@@ -1,4 +1,4 @@
-import ReactiveFile from '../src';
+import * as ReactiveFile from '../src';
 import * as fs from 'fs';
 import * as yml from 'js-yaml';
 import * as xml from 'fast-xml-parser';
